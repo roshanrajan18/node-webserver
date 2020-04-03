@@ -69,7 +69,7 @@ appServer.get('/weather', (request, response) => {
         console.log('Response', lattitude, longitude)
 
         if (lattitude !== null && longitude !== null) {
-            forecast.getForecastForGivenCoordinates(lattitude, longitude, (error, {currently, daily} = {}) => {
+            forecast.getForecastForGivenCoordinates(lattitude, longitude, (error, {currently, daily, temperature, feelsLike} = {}) => {
 
                 if (error) {
                     return response.send({
@@ -79,7 +79,9 @@ appServer.get('/weather', (request, response) => {
                     response.send({
                         Location: location,
                         Current_Forecast: currently,
-                        Daily_Forecast: daily
+                        Daily_Forecast: daily,
+                        Temperature: temperature,
+                        Feels_Like : feelsLike
                     })
                 }
             })

@@ -10,8 +10,8 @@ const geoCode = (address, callBack) => {
             callBack('Location not found', undefined)
         } else {
             callBack(undefined, {
-                lattitude: response.body.features[0].center[0],
-                longitude: response.body.features[0].center[1],
+                lattitude: response.body.features[0].center[1],
+                longitude: response.body.features[0].center[0],
                 location: response.body.features[0].place_name
             })
         }

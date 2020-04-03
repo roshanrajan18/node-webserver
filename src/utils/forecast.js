@@ -17,6 +17,8 @@ const forecastForLocation = (lattitude, longitude, callback) => {
             const forecast = {
                 currently: response.body.currently.summary,
                 daily: response.body.daily.summary,
+                temperature: response.body.currently.temperature,
+                feelsLike: response.body.currently.apparentTemperature
             }
             callback(undefined, forecast)
         }
