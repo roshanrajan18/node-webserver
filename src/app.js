@@ -12,8 +12,6 @@ const publicDirPath = path.join(__dirname, "../public")
 const viewDirPath = path.join(__dirname, "../templates/views")
 const partialsDirPath = path.join(__dirname, "../templates/partials")
 
-console.log(path.join(__dirname, "../public"))
-
 // Setting properties for handlebars
 appServer.set('view engine', 'hbs')
 appServer.set('views', viewDirPath)
